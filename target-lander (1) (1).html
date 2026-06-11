@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Target $750 Gift Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#CC0000;
+  --bg:#FFFFFF;
+  --text:#111111;
+  --muted:#555555;
+  --green:#00B67A;
+  --border:#222222;
+}
+html,body{min-height:100vh}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px 16px 40px;
+  max-width:480px;
+  margin:0 auto;
+}
+
+/* ── ONLINE PILL ── */
+.online-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  background:#f4f4f4;
+  border-radius:50px;
+  padding:6px 14px;
+  font-size:13px;
+  font-weight:600;
+  color:#333;
+  box-shadow:0 1px 6px rgba(0,0,0,.08);
+  margin-bottom:18px;
+  animation:fadeDown .4s ease both;
+}
+.online-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 0 rgba(34,197,94,.5);
+  animation:pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}
+  70%{box-shadow:0 0 0 7px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+
+/* ── LOGO ── */
+.logo-txt{
+  font-size:42px;
+  font-weight:900;
+  color:var(--red);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+  animation:fadeDown .4s .05s ease both;
+}
+
+/* ── SUBTITLE ── */
+.subtitle{
+  font-size:15px;
+  font-weight:700;
+  color:var(--text);
+  text-align:center;
+  line-height:1.45;
+  margin-bottom:28px;
+  animation:fadeDown .4s .08s ease both;
+}
+
+/* ── STEPS CARD ── */
+.steps-card{
+  width:100%;
+  border:2px solid var(--border);
+  border-radius:14px;
+  padding:20px 20px 22px;
+  margin-bottom:30px;
+  animation:fadeUp .45s .1s ease both;
+}
+.steps-title{
+  font-size:15px;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:14px;
+}
+.steps-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+}
+.steps-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text);
+  line-height:1.4;
+}
+.step-num{
+  font-weight:800;
+  color:var(--text);
+  flex-shrink:0;
+  min-width:18px;
+}
+
+/* ── CTA BUTTON ── */
+.cta-btn{
+  display:block;
+  width:100%;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:18px 24px;
+  border-radius:50px;
+  text-align:center;
+  box-shadow:0 4px 0 #9E0000, 0 6px 20px rgba(204,0,0,.28);
+  transition:transform .12s cubic-bezier(.34,1.56,.64,1), box-shadow .12s;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:36px;
+  animation:fadeUp .45s .14s ease both;
+}
+.cta-btn::after{
+  content:'';
+  position:absolute;top:0;left:-100%;width:40%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+  animation:shim 2.6s 1s ease-in-out infinite;
+}
+@keyframes shim{0%{left:-100%}100%{left:220%}}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #9E0000,0 14px 28px rgba(204,0,0,.38)}
+.cta-btn:active{transform:translateY(2px);box-shadow:0 1px 0 #9E0000}
+
+/* ── FAQ ── */
+.faq{
+  width:100%;
+  text-align:center;
+  margin-bottom:36px;
+  animation:fadeUp .45s .18s ease both;
+}
+.faq-title{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--text);
+  margin-bottom:14px;
+}
+.faq-q{
+  font-size:13px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:6px;
+}
+.faq-a{
+  font-size:12.5px;
+  font-weight:400;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:16px;
+}
+.faq-a:last-child{margin-bottom:0}
+
+/* ── STARS / TRUSTPILOT ── */
+.trust-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-bottom:32px;
+  animation:fadeUp .45s .22s ease both;
+}
+.stars-row{
+  display:flex;
+  gap:4px;
+}
+.star{
+  font-size:28px;
+  color:var(--green);
+  line-height:1;
+}
+.trust-rating{
+  font-size:12px;
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:.4px;
+  text-transform:uppercase;
+  text-align:center;
+}
+.trust-logo{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:13.5px;
+  font-weight:700;
+  color:var(--text);
+}
+.tp-star{color:var(--green);font-size:15px}
+
+/* ── COPYRIGHT ── */
+.copyright{
+  font-size:11px;
+  color:#AAAAAA;
+  text-align:center;
+  border-top:1px solid #f0f0f0;
+  padding-top:16px;
+  width:100%;
+  animation:fadeUp .45s .25s ease both;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- ONLINE PILL -->
+<div class="online-pill">
+  <div class="online-dot"></div>
+  <span id="onlineCount">821</span> online now
+</div>
+
+<!-- LOGO -->
+<div class="logo-txt">Target</div>
+
+<!-- SUBTITLE -->
+<div class="subtitle">Complete the Steps below to<br>claim your $750 Target Gift Card</div>
+
+<!-- STEPS CARD -->
+<div class="steps-card">
+  <div class="steps-title">Steps to Qualify</div>
+  <ul class="steps-list">
+    <li><span class="step-num">1.</span> Click on "Start Now"</li>
+    <li><span class="step-num">2.</span> Enter your email and basic information</li>
+    <li><span class="step-num">3.</span> Complete 3-5 recommended deals (required)</li>
+    <li><span class="step-num">4.</span> Claim your $750 Target Gift Card</li>
+  </ul>
+</div>
+
+<!-- CTA -->
+<a class="cta-btn" href="https://giftclick.org/aff_c?offer_id=1381&aff_id=2526&source=1381" target="_blank" rel="noopener">
+  Start Now
+</a>
+
+<!-- FAQ -->
+<div class="faq">
+  <div class="faq-title">Frequently Asked Questions</div>
+
+  <div class="faq-q">What are Deals?</div>
+  <div class="faq-a">Deals are simple tasks you complete to earn rewards. This could be downloading an app, completing a survey, or signing up for a trial subscription using the links provided. Each deal has specific steps—once you reach the required level or complete the task, you'll earn a reward.</div>
+
+  <div class="faq-q">How many Deals do I need to complete?</div>
+  <div class="faq-a">To qualify for your Target gift card, you'll need to complete 3-5 deals to unlock the full $750 gift card value. Make sure you finish all the required deals from start to finish. The more deals you complete, the closer you get to your full reward.</div>
+</div>
+
+<!-- TRUST / TRUSTPILOT -->
+<div class="trust-block">
+  <div class="stars-row">
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <!-- half star via clip -->
+    <span style="position:relative;display:inline-block;font-size:28px;line-height:1;color:#ddd;">★<span style="position:absolute;left:0;top:0;width:55%;overflow:hidden;color:#00B67A;">★</span></span>
+  </div>
+  <div class="trust-rating">9.8 out of 10 based on 9,233 reviews</div>
+  <div class="trust-logo">
+    <span class="tp-star">★</span> Trustpilot
+  </div>
+</div>
+
+<!-- COPYRIGHT -->
+<div class="copyright">Copyright orderclaim.com 2025. All rights reserved...</div>
+
+<script>
+// Online count: starts at 821, fluctuates naturally up and down
+let count = 821;
+let velocity = 0;
+
+function fluctuate() {
+  velocity += (Math.random() - 0.48) * 4;       // slight random push
+  velocity += (821 - count) * 0.04;              // gentle pull back toward 821
+  velocity *= 0.65;                               // dampen oscillation
+  count = Math.round(count + velocity);
+  count = Math.max(755, Math.min(910, count));    // keep in realistic range
+  document.getElementById('onlineCount').textContent = count.toLocaleString();
+  setTimeout(fluctuate, 2500 + Math.random() * 3500);
+}
+
+setTimeout(fluctuate, 3000);
+</script>
+</body>
+</html>
